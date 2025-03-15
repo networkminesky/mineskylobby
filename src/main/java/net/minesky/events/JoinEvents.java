@@ -38,6 +38,8 @@ public class JoinEvents implements Listener {
         e.quitMessage(null);
     }
 
+    public static final String RESOURCEPACK_URL = MineSkyLobby.config.getString("resourcepack.url");
+
     @EventHandler
     public void onResourcePack(PlayerResourcePackStatusEvent e) {
         final Player p = e.getPlayer();
@@ -80,13 +82,12 @@ public class JoinEvents implements Listener {
     }
 
     public static void sendResourcepack(Player p) {
-        String n = MineSkyLobby.config.getString("textura.link");
-        if(n == null) {
+        if(RESOURCEPACK_URL == null || RESOURCEPACK_URL.isEmpty()) {
             p.kickPlayer("§cUm erro ocorreu ao tentar gerar a textura a você, contate a staff do servidor em nosso discord: https://minesky.com.br/discord");
             return;
         }
 
-        p.setResourcePack(n, null,
+        p.setResourcePack(RESOURCEPACK_URL, null,
                 Component.text("§c§lTEXTURA OBRIGATÓRIA\n§cPara jogar em nossos servidores\nvocê deve aceitar a textura do servidor.\n\nO download e aplicação são automáticos, você só precisa autorizar em seu jogo.")
                 , true);
 

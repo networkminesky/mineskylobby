@@ -48,7 +48,7 @@ public class JoinEvents implements Listener {
             case ACCEPTED -> p.sendTitle("§aBaixando textura...", "§7Aguarde ela ser instalada!", 4, 90, 20);
 
             case DECLINED -> {
-                if (!p.hasPermission("minesky.bypasstexture")) {
+                if (!p.hasPermission("mineskylobby.bypass.texture-declined")) {
                     p.kickPlayer(Utils.c("&c&lVocê negou a textura do servidor.\n" +
                             "\n&7Para jogar em nossos servidores, você precisa ativar a nossa textura obrigatória.\n" +
                             "\n&6&lCOMO ATIVAR?" +

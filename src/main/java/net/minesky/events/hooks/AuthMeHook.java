@@ -12,6 +12,9 @@ public class AuthMeHook implements Listener {
     public void onAuth(LoginEvent e) {
         Player p = e.getPlayer();
 
+        if(p.hasPermission("mineskylobby.ignore.texture-request"))
+            return;
+
         JoinEvents.sendResourcepack(p);
     }
 

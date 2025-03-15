@@ -63,7 +63,7 @@ public class MineSkyLobby extends JavaPlugin {
             public void run() {
 
                 for(Player player : Bukkit.getOnlinePlayers()) {
-                    if(player.hasPermission("minesky.ignoreautorpg"))
+                    if(player.hasPermission("mineskylobby.ignore.auto-server"))
                         return;
 
                     if(AuthMeApi.getInstance().isAuthenticated(player) || JoinEvents.textured.contains(player.getUniqueId()))

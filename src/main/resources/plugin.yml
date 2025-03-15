@@ -1,0 +1,5 @@
+main: net.minesky.MineSkyLobby
+name: "MineSkyLobby"
+version: 1.1.0-BETA
+author: "Drawn"
+api-version: "1.19"
